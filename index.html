@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Klara — Ida Meland</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --paper: #ffffff;
+      --ink: #000000;
+      --muted: #666666;
+      --rule: #e8e8e8;
+    }
+
+    * { box-sizing: border-box; }
+    html, body { margin: 0; padding: 0; overflow-x: hidden; }
+    body {
+      background: var(--paper);
+      color: var(--ink);
+      font-family: "Inter", "Helvetica Neue", Helvetica, Arial, sans-serif;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 1.55;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+      transition: color .15s ease;
+    }
+    .row a {
+      text-decoration: underline;
+      text-underline-offset: 3px;
+      text-decoration-thickness: 1px;
+    }
+    a:hover { color: var(--muted); }
+
+    .site {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 40px clamp(24px, 5vw, 56px) 48px;
+      display: grid;
+      grid-template-rows: auto 1fr auto;
+      min-height: 100vh;
+      gap: clamp(80px, 12vw, 160px);
+    }
+
+    /* Nav */
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 24px;
+    }
+    .brand {
+      font-size: 16px;
+      font-weight: 500;
+      letter-spacing: -0.01em;
+    }
+    nav { display: flex; gap: 28px; font-size: 14px; }
+    nav a { color: var(--muted); }
+    nav a:hover { color: var(--ink); }
+    .nav-cta {
+      border: 1px solid #000;
+      border-radius: 999px;
+      padding: 8px 16px;
+      line-height: 1;
+      color: #000 !important;
+      transition: background .15s ease, color .15s ease;
+    }
+    .nav-cta:hover {
+      background: #000;
+      color: #fff !important;
+    }
+
+    /* Main */
+    main { display: grid; gap: clamp(64px, 10vw, 120px); }
+
+    /* Hero */
+    .hero {
+      display: grid;
+      gap: 24px;
+      max-width: 720px;
+    }
+    .eyebrow {
+      font-size: 13px;
+      color: var(--muted);
+    }
+    h1 {
+      font-weight: 500;
+      font-size: clamp(28px, 3.2vw, 38px);
+      line-height: 1.1;
+      letter-spacing: -0.015em;
+      margin: 0;
+      max-width: 22ch;
+    }
+    .h1-sub {
+      display: block;
+      font-size: 0.55em;
+      font-weight: 400;
+      letter-spacing: -0.005em;
+      color: var(--muted);
+      margin-top: 4px;
+    }
+    .lede {
+      font-size: clamp(16px, 1.3vw, 18px);
+      line-height: 1.55;
+      color: #2a2a2a;
+      max-width: 52ch;
+      margin: 0;
+    }
+    .hero .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+    .hero .tags li {
+      background: #f2f0ea;
+      border-radius: 999px;
+      padding: 8px 14px;
+      font-size: 13px;
+      line-height: 1;
+      letter-spacing: -0.005em;
+      color: #000;
+    }
+
+    /* Sections */
+    section { display: grid; gap: 20px; }
+    .row {
+      display: grid;
+      grid-template-columns: 180px 1fr;
+      gap: 40px;
+      padding: 28px 0;
+      border-top: 1px solid var(--rule);
+      align-items: baseline;
+    }
+    .row:last-of-type { border-bottom: 1px solid var(--rule); }
+    .row h2 {
+      margin: 0;
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: #000;
+    }
+    .row p { margin: 0 0 0.75em; max-width: 56ch; }
+    .row p:last-child { margin-bottom: 0; }
+    .row ul {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      display: grid;
+      gap: 4px;
+      max-width: 56ch;
+    }
+    .row ul.two-col {
+      display: block;
+      column-count: 2;
+      column-gap: 40px;
+      max-width: none;
+      width: 100%;
+    }
+    .row ul.two-col li {
+      padding: 4px 0;
+      break-inside: avoid;
+    }
+    .row li {
+      font-size: 15px;
+    }
+
+    .avatar {
+      display: block;
+      width: 96px;
+      height: 96px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 16px;
+    }
+
+    /* Footer */
+    footer {
+      display: flex;
+      justify-content: space-between;
+      gap: 24px;
+      font-size: 13px;
+      color: var(--muted);
+    }
+
+    @media (max-width: 640px) {
+      .site { padding: 28px 22px 36px; gap: 72px; }
+      main { gap: 56px; }
+      h1 { font-size: 26px; max-width: 100%; }
+      .row {
+        grid-template-columns: 1fr;
+        gap: 14px;
+        padding: 26px 0;
+      }
+      .row ul.two-col { column-count: 1; }
+      .row ul { font-size: 16px; }
+      .row p { font-size: 16px; }
+      nav { gap: 18px; font-size: 14px; }
+      footer { flex-direction: column; gap: 6px; }
+    }
+    @media (max-width: 380px) {
+      nav { gap: 14px; font-size: 13px; }
+      h1 { font-size: 24px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="site">
+    <header>
+      <a href="#" class="brand">Klara</a>
+      <nav aria-label="Primary">
+        <a href="#kontakt" class="nav-cta">Contact</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero">
+        <span class="eyebrow">Content &amp; UX</span>
+        <h1>Ida Meland<span class="h1-sub">Self-employed consultant</span></h1>
+        <ul class="tags">
+          <li>UX</li>
+          <li>Content design</li>
+          <li>Editorial work</li>
+        </ul>
+      </section>
+
+      <section id="arbeid">
+        <div class="row">
+          <h2>What I do</h2>
+          <ul class="two-col">
+            <li>UX design</li>
+            <li>UX research</li>
+            <li>Content design</li>
+            <li>UX writing</li>
+            <li>Copywriting</li>
+            <li>Plain language</li>
+            <li>Tone of voice</li>
+            <li>Content production</li>
+            <li>SEO/AEO</li>
+            <li>Editorial work</li>
+          </ul>
+        </div>
+
+        <div class="row">
+          <h2>Customers</h2>
+          <ul class="two-col">
+            <li>Fixa</li>
+            <li>Metro Branding</li>
+            <li>Dagens Næringsliv</li>
+            <li>Interflora</li>
+            <li>Steni</li>
+            <li>Tenden Resort</li>
+            <li>LGS Solutions</li>
+            <li>UX Norge</li>
+          </ul>
+        </div>
+
+        <div class="row">
+          <h2>Previous experience</h2>
+          <ul class="two-col">
+            <li>Content designer at Lawai AS</li>
+            <li>Project manager at UiO IT</li>
+            <li>Service owner at DSS</li>
+            <li>Columnist at DN Teknologi</li>
+            <li>Publishing editor, UX advisor and project manager at Gyldendal Norsk Forlag</li>
+            <li>Content developer and project manager at Cappelen Damm</li>
+            <li>Journalist at Lokalavisene Oslo</li>
+          </ul>
+        </div>
+
+        <div class="row">
+          <h2>Tools &amp; systems</h2>
+          <ul class="two-col">
+            <li>Sanity</li>
+            <li>Figma</li>
+            <li>Claude Code</li>
+            <li>Claude Design</li>
+            <li>Miro</li>
+            <li>WordPress</li>
+            <li>Squarespace</li>
+            <li>Canva</li>
+            <li>Google Analytics</li>
+            <li>Siteimprove</li>
+          </ul>
+        </div>
+
+        <div class="row" id="om">
+          <h2>About</h2>
+          <div>
+            <img class="avatar" src="ida.jpg" alt="Ida Meland">
+            <p>Behind the one-woman studio Klara you'll find me, Ida Meland.</p>
+            <p>The name <strong>Klara</strong> is a subtle play on words. It points to ideas like <strong>plain language</strong> and <strong>clarity</strong>. My goal is to help you use a digital service, like filling out a form, without too many sighs along the way.</p>
+            <p>I have broad experience across UX, content and product development.</p>
+          </div>
+        </div>
+
+        <div class="row" id="kontakt">
+          <h2>Contact</h2>
+          <p>
+            <a href="mailto:idameland@gmail.com">Send me an email</a><br>
+            <a href="tel:+4799703855">+47 997 03 855</a><br>
+            <a href="https://www.linkedin.com/in/idameland/" target="_blank" rel="noopener">LinkedIn</a>
+          </p>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <span>© Klara Design 2026</span>
+      <span>Oslo</span>
+    </footer>
+  </div>
+</body>
+</html>
