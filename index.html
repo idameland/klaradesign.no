@@ -235,9 +235,8 @@
       border-bottom: 1px solid var(--rule);
       font-size: 15px;
     }
+    .exp-list li:first-child { border-top: none; }
     .exp-list li:last-child { border-bottom: none; }
-    .row--exp { border-top: none; }
-    .row--after-exp { border-top: none; }
     @media (max-width: 640px) { .exp-list { columns: 1; } }
     .exp-list .exp-role { display: block; }
     .exp-list .exp-org {
@@ -347,7 +346,7 @@
           </ul>
         </div>
 
-        <div class="row row--exp">
+        <div class="row">
           <h2>Previous experience</h2>
           <ul class="exp-list">
             <li><span class="exp-role">Content designer</span><span class="exp-org">Lawai AS</span></li>
@@ -360,7 +359,7 @@
           </ul>
         </div>
 
-        <div class="row row--after-exp">
+        <div class="row">
           <h2>Tools &amp; systems</h2>
           <ul class="two-col">
             <li>Sanity</li>
