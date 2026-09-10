@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="nb">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Personvern i Lese — Klara Design</title>
+  <meta name="description" content="Hva Lese lagrer om deg, hvorfor, og hva du kan kreve.">
+  <meta property="og:title" content="Personvern i Lese">
+  <meta property="og:description" content="Hva Lese lagrer om deg, hvorfor, og hva du kan kreve.">
+  <meta property="og:url" content="https://klaradesign.no/lese/personvern">
+  <meta property="og:type" content="article">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+
+  <!-- Privacy-friendly analytics by Plausible -->
+  <script async src="https://plausible.io/js/pa-q2awmFmlDm7HLDXE6IFaq.js"></script>
+  <script>
+    window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};
+    plausible.init()
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <!--
+    Personvernerklæringen for Lese.
+
+    Kilden er `docs/personvern.html` i Lese-prosjektet, og den samme
+    teksten står i appen som `Tekst.Personvern.bolker`. Endres teksten
+    ett sted, må den endres alle tre – en bruker som finner to
+    erklæringer med ulikt innhold vet ikke hvilken som gjelder.
+
+    Formen følger klaradesign.no: hvit flate, svart blekk, Inter. Bare
+    ordmerket er Leses eget, skråstilt 9,09 grader – atan(0,16), samme
+    tall som fontmatrisen i appen.
+  -->
+
+  <style>
+    :root {
+      --paper: #ffffff;
+      --ink: #000000;
+      --muted: #666666;
+      --rule: #e8e8e8;
+    }
+
+    * { box-sizing: border-box; }
+    html, body { margin: 0; padding: 0; overflow-x: hidden; }
+
+    body {
+      background: var(--paper);
+      color: var(--ink);
+      font-family: "Inter", "Helvetica Neue", Helvetica, Arial, sans-serif;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 1.55;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
+
+    a { color: inherit; transition: color .15s ease; }
+    a:hover { color: var(--muted); }
+
+    :focus-visible {
+      outline: 2px solid #000;
+      outline-offset: 3px;
+      border-radius: 2px;
+    }
+
+    .skip-link {
+      position: absolute;
+      top: -100%;
+      left: 24px;
+      background: #000;
+      color: #fff;
+      padding: 8px 16px;
+      font-size: 14px;
+      border-radius: 0 0 4px 4px;
+      z-index: 100;
+    }
+    .skip-link:focus { top: 0; }
+
+    .site {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 40px clamp(24px, 5vw, 56px) 48px;
+      display: grid;
+      grid-template-rows: auto 1fr auto;
+      min-height: 100vh;
+      gap: clamp(32px, 5vw, 64px);
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 24px;
+    }
+    .brand {
+      font-size: 16px;
+      font-weight: 500;
+      letter-spacing: -0.01em;
+      text-decoration: none;
+    }
+    nav { display: flex; gap: 28px; font-size: 14px; }
+    nav a { color: var(--muted); text-decoration: none; }
+    nav a:hover { color: var(--ink); }
+
+    /* Måltallet er lesbarhet, ikke sidebredden: rundt 68 tegn. */
+    main { max-width: 34rem; }
+
+    /* Ordmerket, med samme skjevhet som i appen: matrisen c = 0,16,
+       som er atan(0,16) = 9,09 grader. */
+    .ordmerke {
+      font-weight: 600;
+      font-size: 15px;
+      letter-spacing: 0.06em;
+      color: var(--ink);
+      transform: skewX(-9.09deg);
+      transform-origin: bottom left;
+      display: inline-block;
+      margin: 0 0 18px;
+    }
+
+    h1 {
+      font-size: clamp(28px, 4vw, 36px);
+      font-weight: 500;
+      letter-spacing: -0.02em;
+      line-height: 1.15;
+      text-wrap: balance;
+      margin: 0 0 10px;
+    }
+
+    .dato {
+      color: var(--muted);
+      font-size: 14px;
+      margin: 0 0 40px;
+    }
+
+    /* Sammendraget. Den som bare leser ett avsnitt, skal lese dette. */
+    .kort {
+      border-top: 1px solid var(--ink);
+      border-bottom: 1px solid var(--rule);
+      padding: 20px 0 22px;
+      margin: 0 0 40px;
+      font-size: 17px;
+    }
+    .kort p { margin: 0; }
+
+    section { margin-bottom: 34px; }
+
+    h2 {
+      font-size: 17px;
+      font-weight: 500;
+      letter-spacing: -0.01em;
+      margin: 0 0 6px;
+    }
+
+    p { margin: 0 0 14px; }
+    p:last-child { margin-bottom: 0; }
+
+    section a {
+      text-decoration: underline;
+      text-underline-offset: 3px;
+      text-decoration-thickness: 1px;
+    }
+
+    .kontakt {
+      border-top: 1px solid var(--rule);
+      padding-top: 26px;
+      margin-top: 44px;
+    }
+    .kontakt a {
+      text-decoration: underline;
+      text-underline-offset: 3px;
+      text-decoration-thickness: 1px;
+    }
+
+    footer {
+      display: flex;
+      justify-content: space-between;
+      gap: 24px;
+      font-size: 13px;
+      color: var(--muted);
+    }
+
+    @media (max-width: 640px) {
+      .site { padding: 28px 22px 36px; gap: 48px; }
+      footer { flex-direction: column; gap: 6px; }
+    }
+  </style>
+</head>
+
+<body>
+  <a href="#main" class="skip-link">Hopp til innhold</a>
+
+  <div class="site">
+    <header>
+      <a href="/" class="brand">Klara Design</a>
+      <nav aria-label="Primær">
+        <a href="/">Tilbake</a>
+      </nav>
+    </header>
+
+    <main id="main">
+      <p class="ordmerke">LESE</p>
+      <h1>Personvernerklæring</h1>
+      <p class="dato">Sist oppdatert 10. september 2026</p>
+
+      <div class="kort">
+        <p>Lese tar vare på lesehistorikken og profilen din. Ingenting
+        selges, ingenting deles med annonsører og du kan slette alt selv
+        når som helst.</p>
+      </div>
+
+      <section>
+        <h2>Uten konto</h2>
+        <p>Bruker du Lese uten å logge inn, ligger lesehistorikken din
+        bare på telefonen. Ingenting sendes noe sted.</p>
+      </section>
+
+      <section>
+        <h2>Med konto</h2>
+        <p>Da lagrer vi navnet ditt, brukernavnet, et eventuelt
+        profilbilde og bøkene du legger inn. Logger du inn med Apple, får
+        vi en id og en e-postadresse fra dem. Bruker du «Skjul
+        e-postadressen min», ser vi bare Apples videresendingsadresse og
+        aldri din egen.</p>
+        <p>Logger du inn med Vipps, vil Vipps bekrefte hvem du er og gir
+        oss navnet ditt, telefonnummeret og e-postadressen din. Vi får
+        ikke fødselsnummeret ditt, og Vipps får ikke vite hva du leser.</p>
+        <p>Telefonnummeret lagrer vi for at folk du kjenner skal kunne
+        finne deg i Lese. Det vises aldri til andre.</p>
+      </section>
+
+      <section>
+        <h2>Hva andre kan se</h2>
+        <p>Navnet ditt, brukernavnet og bildet ditt er synlig for alle.
+        Det samme er hvem du følger og hvem som følger deg.</p>
+        <p>Bøkene dine ser de som følger deg. Alle kan følge deg – det er
+        ikke noe du godkjenner. Du velger selv hvilke bøker du
+        registrerer, og kan skru av deling på hver enkelt bok.</p>
+        <p>Vil du lese uten at noen ser det, kan du bruke Lese uten
+        konto.</p>
+      </section>
+
+      <section>
+        <h2>Kontaktene dine</h2>
+        <p>Sier du ja til kontakttilgang, leser appen kontaktene på
+        telefonen for å se hvem som allerede bruker Lese. Kontaktene blir
+        på telefonen, de sendes ikke til oss og lagres ikke noe sted. Du
+        kan trekke tilbake tilgangen i iOS-innstillingene.</p>
+      </section>
+
+      <section>
+        <h2>Når du søker etter bøker</h2>
+        <p>Søkeordet sendes til Biblioteksentralen, Nasjonalbiblioteket
+        og Open Library, som svarer med treff. De får søkeordet, ikke
+        informasjon om hvem du er.</p>
+      </section>
+
+      <section>
+        <h2>Hvorfor vi har lov</h2>
+        <p>Vi behandler opplysningene for å levere appen du har bedt om.
+        Det følger av avtalen mellom oss, personvernforordningen artikkel
+        6 nr. 1 bokstav b.</p>
+        <p>Tilgang til kontaktene er et samtykke, artikkel 6 nr. 1
+        bokstav a, og du kan trekke det tilbake når du vil.</p>
+      </section>
+
+      <section>
+        <h2>Hvem som behandler dem for oss</h2>
+        <p>Profilen din og tilhørende innhold ligger hos Supabase, som er
+        vår databehandler. Innloggingen går gjennom Apple eller Vipps.
+        Ingen av dem får bruke opplysningene til noe annet.</p>
+        <p>Lese har ingen annonsører og ingen sporing.</p>
+      </section>
+
+      <section>
+        <h2>Hvor lenge</h2>
+        <p>Så lenge du har en konto hos Lese. Sletter du kontoen i appen
+        (under Innstillinger) blir profilen, bøkene og følgerne dine
+        borte med det samme. Det kan ikke angres.</p>
+      </section>
+
+      <section>
+        <h2>Rettighetene dine</h2>
+        <p>Du har rett til innsyn i det vi har lagret om deg, til å få
+        det rettet eller slettet, til å begrense hva vi gjør med det, og
+        til å få det utlevert i et vanlig filformat.</p>
+        <p>Skriv til oss, så ordner vi det. Mener du vi gjør noe galt,
+        kan du klage til
+        <a href="https://www.datatilsynet.no">Datatilsynet</a>.</p>
+      </section>
+
+      <div class="kontakt">
+        <p>Behandlingsansvarlig er Klara Design.<br>
+        <a href="mailto:hei@klaradesign.no">hei@klaradesign.no</a></p>
+      </div>
+    </main>
+
+    <footer>
+      <span>© Klara Design 2026</span>
+    </footer>
+  </div>
+</body>
+</html>
