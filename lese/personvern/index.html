@@ -149,14 +149,32 @@
     section { margin-bottom: 34px; }
 
     h2 {
-      font-size: 17px;
+      font-size: 19px;
       font-weight: 500;
-      letter-spacing: -0.01em;
-      margin: 0 0 6px;
+      letter-spacing: -0.015em;
+      margin: 0 0 12px;
     }
+
+    /* Underbolkene. Egen vekt og litt luft over, så de leses som
+       tilfeller under spørsmålet og ikke som nye spørsmål. */
+    h3 {
+      font-size: 16px;
+      font-weight: 600;
+      letter-spacing: -0.005em;
+      margin: 26px 0 4px;
+    }
+    h3:first-of-type { margin-top: 18px; }
 
     p { margin: 0 0 14px; }
     p:last-child { margin-bottom: 0; }
+
+    ul {
+      margin: 0 0 14px;
+      padding-left: 20px;
+    }
+    li { margin-bottom: 8px; }
+    li:last-child { margin-bottom: 0; }
+    li strong { font-weight: 600; }
 
     section a {
       text-decoration: underline;
@@ -204,7 +222,7 @@
     <main id="main">
       <p class="ordmerke">LESE</p>
       <h1>Personvernerklæring</h1>
-      <p class="dato">Sist oppdatert 10. september 2026</p>
+      <p class="dato">Sist oppdatert: september 2026</p>
 
       <div class="kort">
         <p>Lese tar vare på lesehistorikken og profilen din. Ingenting
@@ -213,23 +231,48 @@
       </div>
 
       <section>
-        <h2>Uten konto</h2>
-        <p>Bruker du Lese uten å logge inn, ligger lesehistorikken din
-        bare på telefonen. Ingenting sendes noe sted.</p>
+        <h2>Hvem er ansvarlig</h2>
+        <p>Klara Design (org.nr. 935 103 932) er behandlingsansvarlig.
+        Har du spørsmål om personopplysninger,
+        <a href="mailto:hei@klaradesign.no">kontakt oss</a>.</p>
       </section>
 
       <section>
-        <h2>Med konto</h2>
-        <p>Da lagrer vi navnet ditt, brukernavnet, et eventuelt
-        profilbilde og bøkene du legger inn. Logger du inn med Apple, får
-        vi en id og en e-postadresse fra dem. Bruker du «Skjul
+        <h2>Hvilke opplysninger vi samler inn, og hvorfor</h2>
+
+        <h3>Når du bruker Lese uten konto</h3>
+        <p>Ingen. Lesehistorikken din ligger bare på telefonen, og
+        ingenting sendes til oss.</p>
+
+        <h3>Når du oppretter konto</h3>
+        <p>Vi samler inn navn, brukernavn, et eventuelt profilbilde og
+        bøkene du legger inn. Vi bruker opplysningene for å levere
+        tjenesten du har bedt om. Det rettslige grunnlaget er oppfyllelse
+        av avtale (GDPR art. 6 nr. 1 bokstav b).</p>
+
+        <h3>Når du logger inn med Apple</h3>
+        <p>Apple gir oss en id og en e-postadresse. Bruker du «Skjul
         e-postadressen min», ser vi bare Apples videresendingsadresse og
         aldri din egen.</p>
-        <p>Logger du inn med Vipps, vil Vipps bekrefte hvem du er og gir
-        oss navnet ditt, telefonnummeret og e-postadressen din. Vi får
-        ikke fødselsnummeret ditt, og Vipps får ikke vite hva du leser.</p>
+
+        <h3>Når du logger inn med Vipps</h3>
+        <p>Vipps bekrefter hvem du er, og gir oss navn, telefonnummer og
+        e-postadresse. Vi får ikke fødselsnummeret ditt, og Vipps får
+        ikke vite hva du leser.</p>
         <p>Telefonnummeret lagrer vi for at folk du kjenner skal kunne
         finne deg i Lese. Det vises aldri til andre.</p>
+
+        <h3>Når du gir tilgang til kontaktene dine</h3>
+        <p>Appen leser kontaktene på telefonen for å se hvem som allerede
+        bruker Lese. Kontaktene blir på telefonen, de sendes ikke til oss
+        og lagres ikke noe sted. Det rettslige grunnlaget er samtykke
+        (GDPR art. 6 nr. 1 bokstav a), og du kan trekke det tilbake i
+        iOS-innstillingene.</p>
+
+        <h3>Når du søker etter bøker</h3>
+        <p>Søkeordet sendes til Biblioteksentralen, Nasjonalbiblioteket
+        og Open Library, som svarer med treff. De får søkeordet, ikke
+        informasjon om hvem du er.</p>
       </section>
 
       <section>
@@ -244,58 +287,60 @@
       </section>
 
       <section>
-        <h2>Kontaktene dine</h2>
-        <p>Sier du ja til kontakttilgang, leser appen kontaktene på
-        telefonen for å se hvem som allerede bruker Lese. Kontaktene blir
-        på telefonen, de sendes ikke til oss og lagres ikke noe sted. Du
-        kan trekke tilbake tilgangen i iOS-innstillingene.</p>
+        <h2>Hvor lenge vi lagrer opplysningene</h2>
+        <p>Så lenge du har en konto hos Lese. Sletter du kontoen i appen,
+        under Innstillinger, blir profilen, bøkene og følgerne dine borte
+        med det samme. Det kan ikke angres.</p>
       </section>
 
       <section>
-        <h2>Når du søker etter bøker</h2>
-        <p>Søkeordet sendes til Biblioteksentralen, Nasjonalbiblioteket
-        og Open Library, som svarer med treff. De får søkeordet, ikke
-        informasjon om hvem du er.</p>
+        <h2>Deling av opplysninger</h2>
+        <p>Vi deler kun opplysninger med disse leverandørene:</p>
+        <ul>
+          <li><strong>Supabase</strong>: Lagring av data. Selskapet er
+          amerikansk, så data kan overføres utenfor EØS. Overføringen er
+          sikret med EUs standard kontraktsklausuler (SCC).</li>
+          <li><strong>Apple</strong> og <strong>Vipps</strong>:
+          Innlogging. De bekrefter hvem du er, og får ikke vite hva du
+          leser.</li>
+        </ul>
+        <p>Vi har databehandleravtaler med alle som behandler
+        opplysninger på våre vegne.</p>
       </section>
 
       <section>
-        <h2>Hvorfor vi har lov</h2>
-        <p>Vi behandler opplysningene for å levere appen du har bedt om.
-        Det følger av avtalen mellom oss, personvernforordningen artikkel
-        6 nr. 1 bokstav b.</p>
-        <p>Tilgang til kontaktene er et samtykke, artikkel 6 nr. 1
-        bokstav a, og du kan trekke det tilbake når du vil.</p>
+        <h2>Statistikk og analyse</h2>
+        <p>Lese-appen har ingen sporing og ingen annonsører.</p>
+        <p>På nettsidene våre bruker vi Plausible Analytics for å forstå
+        hvordan de brukes. Verktøyet samler ikke inn personopplysninger,
+        bruker ikke informasjonskapsler og krever ikke samtykke etter
+        ekomloven.</p>
       </section>
 
       <section>
-        <h2>Hvem som behandler dem for oss</h2>
-        <p>Profilen din og tilhørende innhold ligger hos Supabase, som er
-        vår databehandler. Innloggingen går gjennom Apple eller Vipps.
-        Ingen av dem får bruke opplysningene til noe annet.</p>
-        <p>Lese har ingen annonsører og ingen sporing.</p>
+        <h2>Dine rettigheter</h2>
+        <p>Du har rett til å:</p>
+        <ul>
+          <li>få innsyn i opplysningene vi har om deg</li>
+          <li>be oss rette feil eller mangler</li>
+          <li>be oss slette opplysninger («retten til å bli glemt»)</li>
+          <li>be oss begrense behandlingen i noen tilfeller</li>
+          <li>få utlevert opplysningene dine i et maskinlesbart format</li>
+          <li>protestere mot behandling basert på berettiget interesse</li>
+        </ul>
+        <p>Vil du bruke rettighetene dine?
+        <a href="mailto:hei@klaradesign.no">Kontakt oss</a>.</p>
+        <p>Du kan også klage til
+        <a href="https://www.datatilsynet.no">Datatilsynet</a> hvis du
+        mener vi bryter regelverket.</p>
       </section>
 
       <section>
-        <h2>Hvor lenge</h2>
-        <p>Så lenge du har en konto hos Lese. Sletter du kontoen i appen
-        (under Innstillinger) blir profilen, bøkene og følgerne dine
-        borte med det samme. Det kan ikke angres.</p>
+        <h2>Endringer</h2>
+        <p>Hvis vi gjør vesentlige endringer, informerer vi om det i
+        appen og på nettsiden. Datoen øverst viser når teksten sist ble
+        endret.</p>
       </section>
-
-      <section>
-        <h2>Rettighetene dine</h2>
-        <p>Du har rett til innsyn i det vi har lagret om deg, til å få
-        det rettet eller slettet, til å begrense hva vi gjør med det, og
-        til å få det utlevert i et vanlig filformat.</p>
-        <p>Skriv til oss, så ordner vi det. Mener du vi gjør noe galt,
-        kan du klage til
-        <a href="https://www.datatilsynet.no">Datatilsynet</a>.</p>
-      </section>
-
-      <div class="kontakt">
-        <p>Behandlingsansvarlig er Klara Design.<br>
-        <a href="mailto:hei@klaradesign.no">hei@klaradesign.no</a></p>
-      </div>
     </main>
 
     <footer>
