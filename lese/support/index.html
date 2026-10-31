@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="nb">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Lese: Hjelp og kontakt — Klara Design</title>
+  <meta name="description" content="Svar på de vanligste spørsmålene om Lese, og hvordan du får tak i oss.">
+  <meta property="og:title" content="Lese: Hjelp og kontakt">
+  <meta property="og:description" content="Svar på de vanligste spørsmålene om Lese, og hvordan du får tak i oss.">
+  <meta property="og:url" content="https://klaradesign.no/lese/support">
+  <meta property="og:type" content="article">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+
+  <!-- Privacy-friendly analytics by Plausible -->
+  <script async src="https://plausible.io/js/pa-q2awmFmlDm7HLDXE6IFaq.js"></script>
+  <script>
+    window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};
+    plausible.init()
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <!--
+    Støttesida for Lese. Apple krever en støtteadresse som svarer, og
+    den skal stå i App Store Connect som Support URL.
+
+    Formen er personvernsidas, tegn for tegn: samme variabler, samme
+    skala, samme ordmerke. To sider fra samme app som ser ulike ut, ser
+    ut som to ulike avsendere.
+
+    Teksten overlapper tre steder, og de må endres sammen:
+
+      1. `Tekst.Innstillinger` i appen – kontaktadressen og ordene om
+         sletting og utlogging
+      2. klaradesign.no/lese/personvern – hva andre kan se
+      3. denne sida
+
+    Svaret på «hvem ser notatene mine» står begge steder med vilje. Det
+    er det folk spør om, og de leter her før de leter i erklæringen.
+  -->
+
+  <style>
+    :root {
+      --paper: #ffffff;
+      --ink: #000000;
+      --muted: #666666;
+      --rule: #e8e8e8;
+    }
+
+    * { box-sizing: border-box; }
+    html, body { margin: 0; padding: 0; overflow-x: hidden; }
+
+    body {
+      background: var(--paper);
+      color: var(--ink);
+      font-family: "Inter", "Helvetica Neue", Helvetica, Arial, sans-serif;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 1.55;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
+
+    a { color: inherit; transition: color .15s ease; }
+    a:hover { color: var(--muted); }
+
+    :focus-visible {
+      outline: 2px solid #000;
+      outline-offset: 3px;
+      border-radius: 2px;
+    }
+
+    .skip-link {
+      position: absolute;
+      top: -100%;
+      left: 24px;
+      background: #000;
+      color: #fff;
+      padding: 8px 16px;
+      font-size: 14px;
+      border-radius: 0 0 4px 4px;
+      z-index: 100;
+    }
+    .skip-link:focus { top: 0; }
+
+    .site {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 40px clamp(24px, 5vw, 56px) 48px;
+      display: grid;
+      grid-template-rows: auto 1fr auto;
+      min-height: 100vh;
+      gap: clamp(32px, 5vw, 64px);
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 24px;
+    }
+
+    .brand {
+      font-weight: 600;
+      font-size: 16px;
+      letter-spacing: -0.01em;
+      text-decoration: none;
+    }
+    nav { display: flex; gap: 28px; font-size: 14px; }
+    nav a { color: var(--muted); text-decoration: none; }
+    nav a:hover { color: var(--ink); }
+
+    /* Måltallet er lesbarhet, ikke sidebredden: rundt 68 tegn. */
+    main { max-width: 34rem; }
+
+    /* Ordmerket, med samme skjevhet som i appen: matrisen c = 0,16,
+       som er atan(0,16) = 9,09 grader. */
+    .ordmerke {
+      font-weight: 600;
+      font-size: 15px;
+      letter-spacing: 0.06em;
+      color: var(--ink);
+      transform: skewX(-9.09deg);
+      transform-origin: bottom left;
+      display: inline-block;
+      margin: 0 0 18px;
+    }
+
+    h1 {
+      font-size: clamp(28px, 4vw, 36px);
+      font-weight: 500;
+      letter-spacing: -0.02em;
+      line-height: 1.15;
+      text-wrap: balance;
+      margin: 0 0 10px;
+    }
+
+    .dato {
+      color: var(--muted);
+      font-size: 14px;
+      margin: 0 0 40px;
+    }
+
+    /* Den som bare leser ett avsnitt, skal lese dette: hvor man får
+       tak i et menneske. Det er hele poenget med sida. */
+    .kort {
+      border-top: 1px solid var(--ink);
+      border-bottom: 1px solid var(--rule);
+      padding: 20px 0 22px;
+      margin: 0 0 40px;
+      font-size: 17px;
+    }
+    .kort p { margin: 0; }
+    .kort a {
+      text-decoration: underline;
+      text-underline-offset: 3px;
+      text-decoration-thickness: 1px;
+    }
+
+    section { margin-bottom: 34px; }
+
+    h2 {
+      font-size: 19px;
+      font-weight: 500;
+      letter-spacing: -0.015em;
+      margin: 0 0 12px;
+    }
+
+    /* Spørsmålene. Egen vekt og litt luft over, så de leses som
+       spørsmål under bolken og ikke som nye bolker. */
+    h3 {
+      font-size: 16px;
+      font-weight: 600;
+      letter-spacing: -0.005em;
+      margin: 26px 0 4px;
+    }
+    h3:first-of-type { margin-top: 18px; }
+
+    p { margin: 0 0 14px; }
+    p:last-child { margin-bottom: 0; }
+
+    ul {
+      margin: 0 0 14px;
+      padding-left: 20px;
+    }
+    li { margin-bottom: 8px; }
+    li:last-child { margin-bottom: 0; }
+    li strong { font-weight: 600; }
+
+    section a {
+      text-decoration: underline;
+      text-underline-offset: 3px;
+      text-decoration-thickness: 1px;
+    }
+
+    .kontakt {
+      border-top: 1px solid var(--rule);
+      padding-top: 26px;
+      margin-top: 44px;
+    }
+    .kontakt a {
+      text-decoration: underline;
+      text-underline-offset: 3px;
+      text-decoration-thickness: 1px;
+    }
+
+    footer {
+      display: flex;
+      justify-content: space-between;
+      gap: 24px;
+      font-size: 13px;
+      color: var(--muted);
+    }
+
+    @media (max-width: 640px) {
+      .site { padding: 28px 22px 36px; gap: 48px; }
+      footer { flex-direction: column; gap: 6px; }
+    }
+  </style>
+</head>
+
+<body>
+  <a href="#main" class="skip-link">Hopp til innhold</a>
+
+  <div class="site">
+    <header>
+      <a href="/" class="brand">Klara Design</a>
+      <nav aria-label="Primær">
+        <a href="/">Tilbake</a>
+      </nav>
+    </header>
+
+    <main id="main">
+      <p class="ordmerke">LESE</p>
+      <h1>Lese: Hjelp og kontakt</h1>
+      <p class="dato">Sist oppdatert: oktober 2026</p>
+
+      <div class="kort">
+        <p>Finner du ikke svaret her, skriv til
+        <a href="mailto:hei@klaradesign.no?subject=Sp%C3%B8rsm%C3%A5l%20om%20Lese">hei@klaradesign.no</a>.</p>
+      </div>
+
+      <section>
+        <h2>Kom i gang</h2>
+        <p>Lese er en app for å ta vare på lesehistorikken din, se hva
+        andre leser og finne din neste bok.</p>
+        <p>Du kan logge inn med Vipps eller med Apple, eller la være.
+        Velger du «Jeg vil bruke Lese uten å logge inn», kan du gjøre mye
+        av det samme som for innlogget: søke opp bøker, registrere hva du
+        leser, gi stjerner og skrive notater. Ved å opprette konto får du
+        en profil med navn og ev. bilde, kan følge andre og andre kan
+        følge deg tilbake.</p>
+      </section>
+
+      <section>
+        <h2>Vanlige spørsmål</h2>
+
+        <h3>Hvem kan se bøkene og notatene mine?</h3>
+        <p>Med konto: Navnet ditt, brukernavnet og bildet ditt er synlig
+        for alle. Bøkene du registrerer, stjernene du gir dem og notatene
+        du skriver er synlige for alle som er logget inn i Lese. Bruker
+        du Lese uten konto, er det bare du som ser noe av det. Ingen kan
+        søke deg opp, og ingenting blir delt med andre.</p>
+
+        <h3>Hva skjer med bøkene mine hvis jeg bytter telefon?</h3>
+        <p>Med en konto er alt lagret, og ligger klart neste gang du
+        logger inn.</p>
+        <p>Uten konto ligger bøkene bare på telefonen. De følger ikke med
+        til en ny, og forsvinner om du sletter appen. Vil du ta vare på
+        det du har lagt inn, må du opprette en konto.</p>
+
+        <h3>Jeg finner ikke boka jeg leter etter</h3>
+        <p>Søket henter fra Biblioteksentralen, Nasjonalbiblioteket og
+        Open Library. De dekker det meste, men ikke alt — særlig eldre
+        lydbøker kan mangle.</p>
+        <p>Oppdager du noe som mangler, send oss boktittel og forfatter
+        av boka, så ser vi på det.</p>
+
+        <h3>Hvordan setter jeg året jeg leste en bok?</h3>
+        <p>Åpne boka og trykk på året ved siden av «Lest». Du kan (for
+        enkelhets skyld) bare velge inneværende år eller
+        «Tidligere».</p>
+
+        <h3>Hvordan merker jeg en favoritt?</h3>
+        <p>Trykk på hjertet på boksida. Favorittene dine får sin egen
+        fane på profilen.</p>
+
+        <h3>Jeg bruker stor skrift eller VoiceOver</h3>
+        <p>Lese følger tekststørrelsen du har valgt i iOS, også de aller
+        største, og den retter seg etter «Fet tekst». Appen er laget for
+        å kunne leses med VoiceOver. Oppdager du noe feil med dette, vil
+        vi gjerne få beskjed om det.</p>
+
+        <h3>Hvordan logger jeg ut?</h3>
+        <p>Du logger ut under Innstillinger, som du finner bak tannhjulet
+        øverst på profilen din. Velg «Logg ut». Alt i profilen din blir
+        liggende, og er der neste gang du logger inn.</p>
+
+        <h3>Hvordan sletter jeg kontoen min?</h3>
+        <p>Gå til innstillinger og velg «Slett kontoen» nederst. Profilen
+        inkludert bøkene og følgerne dine blir borte med det samme. Det
+        kan ikke angres, og vi kan ikke hente det tilbake for deg
+        etterpå.</p>
+      </section>
+
+      <section>
+        <h2>Feil, ønsker og forslag</h2>
+        <p>Finner du feil, eller har tanker om hvordan appen kan bli
+        bedre, vil vi gjerne høre om det. Om du finner feil, skriv
+        gjerne:</p>
+        <ul>
+          <li>hvilken telefon du har, og hvilken iOS-versjon</li>
+          <li>hva du gjorde rett før det gikk galt</li>
+          <li>et skjermbilde, om du rakk å ta ett</li>
+        </ul>
+        <p>Vi leser alt som sendes til oss.</p>
+      </section>
+
+      <section>
+        <h2>Personvern</h2>
+        <p>Hva vi lagrer, hvorfor og hva du kan kreve, står i
+        <a href="/lese/personvern">personvernerklæringen</a>.</p>
+      </section>
+
+      <div class="kontakt">
+        <p><strong>Klara Design</strong><br>
+        Org.nr. 935 103 932<br>
+        <a href="mailto:hei@klaradesign.no?subject=Sp%C3%B8rsm%C3%A5l%20om%20Lese">hei@klaradesign.no</a></p>
+      </div>
+
+    </main>
+
+    <footer>
+      <span>© Klara Design 2026</span>
+    </footer>
+  </div>
+</body>
+</html>
